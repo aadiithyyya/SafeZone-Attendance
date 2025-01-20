@@ -1,5 +1,5 @@
 export const fetchAttendanceData = async () => {
-    const response = await fetch("http://192.168.29.179:5001/api/attendance/fetch");
+    const response = await fetch("https://safezone-attendence-checker-webapp2.onrender.com/api/attendance/fetch");
     if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
     }

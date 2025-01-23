@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Header from "./Header";
 import Card from "./Card";
+import CircularProgressCard from "./CircularProgressCard";
+
 import Button from "./Button";
 import { fetchAttendanceData } from "../api/attendance";
 
@@ -31,10 +33,10 @@ function Dashboard() {
                 {error && <p style={{ color: "#e57373" }}>{error}</p>}
             </div>
             <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-    {data.length > 0 ? (
-        data.map((item, index) => (
+            {data.length > 0 ? (
+    data.map((item, index) => (
+        <React.Fragment key={index}>
             <Card
-                key={index}
                 courseTitle={item.courseTitle}
                 slot={item.slot}
                 category={item.category}
@@ -45,12 +47,18 @@ function Dashboard() {
                 marginClasses={item.marginClasses}
                 requiredClasses={item.requiredClasses}
             />
-        ))
-    ) : (
-        <p style={{ textAlign: "center", color: "#90caf9" }}>
-            No data available. Please fetch attendance.
-        </p>
-    )}
+            <CircularProgressCard
+                courseTitle={item.courseTitle}
+                attendancePercentage={item.attendancePercentage}
+            />
+        </React.Fragment>
+    ))
+) : (
+    <p style={{ textAlign: "center", color: "#90caf9" }}>
+        No data available. Please fetch attendance.
+    </p>
+)}
+
 </div>
 
         </div>

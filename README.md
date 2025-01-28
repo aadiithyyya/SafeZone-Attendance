@@ -1,3 +1,3 @@
-#SRM Personalized Attendance Checker WebApp - SRM SafeZone
+#SRM Personalized Attendance Checker WebApp - SRM SafeZone#
 
-#Created by: Aadithya Ram(http://linkedin.copm/in/aadiithyyya)
+#Created by: Aadithya Ram (http://linkedin.com/in/aadiithyyya)#
